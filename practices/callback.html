@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        span {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Callback</title>
+</head>
+<body>
+    <h1>callback</h1>
+    <div id="myDiv">
+
+    </div>
+    <script>
+        const db = [
+            {
+                id: 1,
+                name: "John Doe",
+                age: 30
+            },
+            {
+                id: 2,
+                name: "Jane Doe",
+                age: 25
+            },
+            {
+                id: 3,
+                name: "Mike Doe",
+                age: 28
+            },
+            {
+                id: 4,
+                name: "Emily Doe",
+                age: 32
+            }
+        ];
+        let myDiv = document.getElementById("myDiv");
+
+        function addElement(element) {
+            myDiv.appendChild(element);
+        }
+
+        function createElement(element, callback) {
+            let id = document.createElement("span");
+            id.innerText = "id: " + element.id;
+            setTimeout(() => {
+                callback(id);
+            }, 3000);
+            
+            let name = document.createElement("h3");
+            name.innerText = element.name;
+            callback(name);
+
+            let age = document.createElement("span");
+            age.innerText = "Age: " + element.age;
+            callback(age);
+        }
+
+        db.forEach(element => {
+            createElement(element, addElement);
+        });
+    </script>
+</body>
+</html>
