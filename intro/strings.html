@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>strings</h1>
+    <span id="mystr"></span>
+    <p>Javascript dizeleri ilkel ve değişmezdir: Tüm string metotları orijinal stringi değiştirmeden yeni bir string üretir.</p>
+    <script>
+        let str = "Hello World!";
+        console.log(str);
+        console.log(str.length); // karakter dizenin uzunlugu
+
+        function yazdir(str) {
+            document.getElementById("mystr").innerHTML = str;
+        };
+
+        yazdir("aras");
+
+        // charAt
+        console.log("charAt()");
+        let text1 = "Hello World!";
+        console.log(text1.charAt(0)); // verilen indeksteki harfi döndürür negatif değere izin vermez
+
+        // charCodeAt
+        console.log("charCodeAt()");
+        let text2 = "Hello World!";
+        console.log(text2.charCodeAt(0)); // verilen indeksteki karakterin unicode değerini döndürür
+
+        // at
+        console.log("at()");
+        let text3 = "Hello World!";
+        console.log(text3.at(-2)); //verilen indexteki harfi alır negatif değerlere izin verir
+
+        // methods
+
+        // slice
+        let txt = "hello aras this is string";
+        console.log(txt.slice(10));  // verilen indexten itibaren kalanı dondurur
+        console.log(txt.slice(0, 10)); // başlangıç ve bitiş değeri
+        console.log(txt.slice(-5));   // sondan başlar
+        console.log(txt.slice(-10, -5)); // sondan geriye dogru istenilen karaktere gider
+        
+        // substring()
+        let str2 = "Apple, Banana, Kiwi";
+        console.log(str2.substring(7, 13)); // verilen indexler arasındaki karakterleri döndürür negatif değeri 0 olarak alır
+
+        // substr()
+        console.log(str2.substr(7, 6)); // verilen indexten itibaren ve istenilen uzunlukta karakterleri döndürür
+
+        // toLowerCase()
+        console.log("toLowerCase()");
+        let text4 = "Hello World!";
+        console.log(text4.toLowerCase());
+
+        // toUpperCase()
+        console.log("toUpperCase()");
+        let text5 = "Hello World!";
+        console.log(text5.toUpperCase());
+
+        // concat()
+        let str3 = "Hello ";
+        let str4 = "World!";
+        console.log(str3.concat(str4));
+
+        // replace() yer değiştirir
+        let str5 = "Hello World!";
+        console.log(str5.replace("World", "JavaScript"));
+
+        // trim() sağ ve sol boşlukları kaldırır
+        let str6 = "  Hello World!   ";
+        console.log(str6.trim());
+
+        // split belirtilen karakterler ile dizeyi böler ve array dondurur
+        let str7 = "Hello, World!";
+        console.log(str7.split(", "));
+        
+        // indexOf() aranan kelimenin başlangıç indeksini dondurur
+        let text = "Please locate where 'locate' occurs!";
+        console.log(text.indexOf("locate")); // 7
+
+        // lastIndexOf() aranan kelimenin en sondaki indeksini dondurur
+        console.log(text.lastIndexOf("locate")); // 30
+
+        // search() aranan kelimenin ilk ve son indeksini dondurur
+        console.log(text.search("locate")); // 7
+
+        // match() aranan kelimenin ilk ve son indekslerini döndürür ve array olarak
+        console.log(text.match("locate"));
+
+        // matchAll() aranan kelimenin tüm indekslerini döndürür ve iterasyon yapılabilir
+        let matchAll = text.matchAll(/locate/g);
+        for (let match of matchAll) {
+            console.log(match.index);
+        }
+
+        // repeat() bir dizeyi belirtilen kadar tekrarlar
+        let str8 = "Hello ";
+        console.log(str8.repeat(3));
+
+        // includes
+        console.log("includes()");
+        let text6 = "Hello World!";
+        console.log(text6.includes("World")); // true
+
+        // startsWith
+        console.log("startsWith()");
+        let text7 = "Hello World!";
+        console.log(text7.startsWith("Hello")); // true
+
+        // endsWith
+        console.log("endsWith()");
+        let text8 = "Hello World!";
+        console.log(text8.endsWith("World!")); // true
+
+
+        let firstName = "John";
+        let lastName = "Doe";
+
+        let mytxt = `Welcome ${firstName}, ${lastName}!`; // backtickler ile string içine değişken atanabilir
+        console.log(mytxt);
+    </script>
+</body>
+</html>

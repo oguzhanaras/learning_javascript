@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>objects</h1>
+    <span id="myspan"></span>
+    <script>
+        const cars = {
+            model: "Mustang",
+            year: 1970,
+            color: "red",
+            start: function() {
+                console.log(`${this.model} has started`);
+            }
+        };
+
+        console.log(cars);
+        console.log(cars.model);
+        cars.start();
+
+        cars.model = "Camry";
+        console.log(cars);
+        console.log(cars.model);
+        cars.start();
+
+        const person = {
+            name: "John Doe",
+            age: 30,
+            greet: function() {
+                console.log(`Hello, my name is ${this.name}`);
+            }
+        };
+
+        const x = person;
+        console.log(x);
+        x.name = "Jane Doe";
+        console.log(x);
+        console.log(x["name"]);
+
+        //delete x.name; // özelliği ve anahtarı siler
+        console.log(x);
+        document.getElementById("myspan").innerHTML = x.name;
+
+
+        const stajyer = {
+            name: "john",
+            age: 25,
+            university: "ABC University",
+            studies: ["Computer Science", "Mathematics"]
+        }
+
+        console.log("for dongusu");
+        for (let x in stajyer) {
+            console.log(x); // keyleri dondurur
+            console.log(stajyer[x]); // valueleri dondurur
+        }
+
+        console.log("for dongusu 2");
+        let k = "aras";
+        for (let i in k) {
+            console.log(i); // indexleri dondurur
+            console.log(k[i]); // harfleri dondurur
+        }
+
+        // constructor
+        function Car(model, year, color) {
+            this.model = model;
+            this.year = year;
+            this.color = color;
+            this.start = function() {
+                console.log(`${this.model} has started`);
+            }
+        }
+
+        const myCar = new Car("Mustang", 1970, "red");
+        const myCar2 = new Car("opel", 1999, "blue");
+        console.log(myCar);
+        myCar.start();
+        myCar2.model = "porsche";
+        console.log(myCar2);
+        myCar2.start();
+        Car.prototype.cost = 5000;
+        console.log(myCar.cost);
+    </script>
+</body>
+</html>

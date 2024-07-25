@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>arrays</h1>
+    <script>
+        // diziler birden cok deger tutan özel değişkenlerdir
+        let cars = ["ford", "volvo", "pejo"];
+        // dizileri const ile tanımlamak yaygın kullanımdır
+        const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // elemanlara erisme
+        console.log(cars[0]); // ford
+        console.log(array[2]); // 3
+        // elemanlara değer atama
+        cars[0] = "bmw";
+        console.log(cars);
+        // toString() diziyi, elemanları virgülle ayrılmıs olarak bir dizeye yani stringe donusturur
+        console.log("toString()", cars.toString());
+        // dizi içinde dizi obje ya da fonksiyon olabilir
+        //length dizilerin uzunlugunu yani eleman sayısını verir.
+        console.log("array.length", array.length); // 9
+        // son elemana erişme
+        console.log("index -1", array[array.length - 1]); // son eleman
+        // for loop array
+        for (let i = 0; i < cars.length; i++) {
+            console.log("loop", cars[i]);
+        }
+        // forEach loop array
+        array.forEach(element => {
+            console.log("forEach", element);
+        });
+        array.push(10);
+        console.log("push 10 ",array);
+
+        // *************methods
+        // length
+        console.log("array.length", array.length); // 9
+        // toString() diziyi, elemanları virgülle ayrılmıs olarak bir dizeye yani stringe donusturur
+        console.log("toString()", cars.toString());
+
+        // at() indexteki elemanı dondurur
+        console.log("at(1)", array.at(1)); // 2
+
+        // join tostring gibi elemanlari bir dizede birlestirir fakat ayracı belirtme hakkı sunar
+        console.log("join()", array.join("-")); // 1-2-3-4-5-6-7-8-9
+
+        // pop() diziden son elemanı siler ve geriye dondurur
+        console.log("pop()", array.pop()); // 10
+        console.log("after pop()", array);
+
+        // push() dizinin sonuna eleman ekler
+        array.push(10);
+        console.log("push 10 ", array);
+        let length = array.push(15); // push() yeni dize uzunlugunu dondurur
+        console.log("after push 15 length:", length);
+
+        // shift() ilk elemanı siler ve geriye kalanın indeksini 1 geriye atar
+        shiftarr = [1, 2, 3, 4];
+        console.log("shift()", shiftarr.shift()); // 1
+        console.log("after shift()", shiftarr);
+        console.log("index 0 = ",shiftarr[0]);
+
+        // unshift() yöntemi bir diziye (başlangıçta) yeni bir eleman ekler ve eski elemanların "kaydırmasını kaldırır":
+        unshiftarr = [1, 2, 3, 4];
+        console.log("unshift()", unshiftarr.unshift(0)); // unshit dizinin uzunlugunu dondurur
+        console.log("after unshift()", unshiftarr);
+        console.log("index 0 = ", unshiftarr[0]);
+
+        // concat dizeleri ve dizileri birleştirir. dizileri değiştirmez yeni bir dizi döndürür
+        const myGirls = ["Cecilie", "Lone"];
+        const myBoys = ["Emil", "Tobias", "Linus"];
+
+        const myChildren = myGirls.concat(myBoys);
+        console.log("concat()", myChildren);
+
+        // copyWithin() yöntemi, dizi öğelerini bir dizideki başka bir konuma kopyalar:
+        const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+        fruits.copyWithin(1, 0);
+        console.log("copyWithin()", fruits);
+
+        // flat() yöntemi, alt dizi öğeleri belirli bir derinliğe kadar birleştirilen yeni bir dizi oluşturur.
+        const arr = [1, 2, [3, 4], [5, 6]];
+        const flattened = arr.flat();
+        console.log("flat()", flattened);
+        // splice() yöntemi,
+        const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+        fruits2.splice(2, 0, "Lemon", "Kiwi");
+        // İlk parametre (2) yeni elemanların ekleneceği (ekleme yapılacağı) konumu tanımlar.
+        // İkinci parametre (0) kaç öğenin kaldırılması gerektiğini tanımlar.
+        // splice() yöntemi, silinen öğeleri içeren bir dizi döndürür:
+        console.log("splice()", fruits2);
+
+        // Yeni toSpliced() yöntemi ile eski splice() yöntemi arasındaki fark, eski yöntem orijinal diziyi değiştirirken yeni yöntemin orijinal diziyi değiştirmeden yeni bir dizi oluşturmasıdır.
+
+        // slice() yöntemi, bir dizinin bir parçasını yeni bir diziye böler:
+        // slice() yöntemi yeni bir dizi oluşturur.
+        // slice() yöntemi kaynak diziden herhangi bir öğe kaldırmaz.
+        const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+        const citrus = fruits3.slice(1, 3); // ilk eleman baslangıç 3. eleman bitiş ama dahil değil
+        // ikinci eleman verilmezse başlangıç değerinden sona kadar alır
+        console.log("slice()", citrus);
+        console.log("fruits3 after slice()", fruits3);
+    </script>
+</body>
+</html>

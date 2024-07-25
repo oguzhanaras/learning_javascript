@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>variables</h1>
+    <p>değişkenler 4 sekilde beilirtilir</p>
+    <ul>
+        <li>otomatik</li>
+        <li>var</li>
+        <li>let</li>
+        <li>const</li>
+    </ul>
+    <p>Not
+
+        var anahtar sözcüğü 1995'ten 2015'e kadar tüm JavaScript kodlarında kullanılmıştır.
+        
+        let ve const anahtar sözcükleri 2015 yılında JavaScript'e eklenmiştir.
+        
+        var anahtar sözcüğü yalnızca eski tarayıcılar için yazılmış kodlarda kullanılmalıdır.</p>
+    <p>
+        1. Her zaman değişkenleri bildirin
+        
+        2. Değerin değiştirilmemesi gerekiyorsa her zaman const kullanın
+        
+        3. Türün değiştirilmemesi gerekiyorsa her zaman const kullanın (Diziler ve Nesneler)
+        
+        4. Sadece const kullanamıyorsanız let kullanın
+        
+        5. Var'ı yalnızca eski tarayıcıları desteklemeniz gerekiyorsa kullanın.</p>
+    <span>Tüm değişkenleri bir kodun başında bildirmek iyi bir programlama uygulamasıdır.</span>
+    <p>Dolar işaretinin kullanımı JavaScript'te çok yaygın değildir, ancak profesyonel programcılar bunu genellikle bir JavaScript kitaplığındaki ana işlev için bir takma ad olarak kullanırlar.</p>
+    <script>
+        x = 5; // otomatik olusturma
+        var a = 10; // var ile
+        let y  = 5; // let ile
+        const z = 5; // const ile
+
+        let t; // değeri sonradan tanımlanacak değer undefined olarak bildirilir
+
+        let f = 10;
+        let g = "5";
+        let toplam = f + g;
+        console.log(toplam); // 105 olarak yazdırır fakat int 10 str 5 olarak
+    </script>
+</body>
+</html>

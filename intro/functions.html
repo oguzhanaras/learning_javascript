@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>functions</h1>
+    <script>
+        function sayHello(name) {
+            console.log("Hello " + name);
+        }
+        
+        let person1 = "john";
+        sayHello(person1);
+        sayHello("aras");
+
+        function carpim(a, b) {
+            return a * b; // return geriye değer dondurur ve baska yerde kullanmamızı saglar
+        }
+
+        console.log(carpim(5, 3));
+
+
+        let name = "aras";
+        function changeName() {
+            let x = "aras2";
+            console.log(name); // aras
+            console.log(x); //
+        }
+
+        changeName();
+        console.log(name); // aras
+        console.log(x); // aras2 yazdırmaz cunku x local
+    </script>
+</body>
+</html>
