@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    <h1>promise</h1>
+    <script>
+        const promise = new Promise(
+            (res, rej) => {
+                res("oke");
+                rej("not oke");
+            }
+        );
+
+        promise.then(
+            (value) => {
+                console.log("basarili", value);
+            }
+        ).catch(
+            (error) => {
+                console.log("hatali", error);
+            }
+        )
+    </script>
+</body>
+</html>
